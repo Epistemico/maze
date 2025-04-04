@@ -31,8 +31,9 @@ def main():
     cell4.bottom_wall = False
     cell4.draw(400, 10, 500, 110)
 
-    cell5 = Cell(win)
-    cell5.draw(350, 250, 400, 350)
+    cell.draw_move(cell2)
+    cell2.draw_move(cell3)
+    cell3.draw_move(cell4)
 
     win.wait_for_close()
 
