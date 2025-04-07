@@ -1,39 +1,21 @@
 from graphics import *
 from cell import *
+from maze import *
 
 
 def main():
-    win = Window(800, 600)
+    screen_x = 800
+    screen_y = 600
+    win = Window(screen_x, screen_y)
     
-    line = Line(Point(10, 10), Point(100, 110))
-    line2 = Line(Point(10, 110), Point(100, 10))
+    num_rows = 10
+    num_colums = 12
 
-    win.draw_line(line, "black")
-    win.draw_line(line2, "red")
-    
-    cell = Cell(win)
-    cell.top_wall = False
-    cell.right_wall = False
-    cell.draw(100, 10, 200, 110)
-
-    cell2 = Cell(win)
-    cell2.left_wall = False
-    cell2.right_wall = False
-    cell2.draw(200, 10, 300, 110)
-
-    cell3 = Cell(win)
-    cell3.left_wall = False
-    cell3.right_wall = False
-    cell3.draw(300, 10, 400, 110)
-
-    cell4 = Cell(win)
-    cell4.left_wall = False
-    cell4.bottom_wall = False
-    cell4.draw(400, 10, 500, 110)
-
-    cell.draw_move(cell2)
-    cell2.draw_move(cell3)
-    cell3.draw_move(cell4)
+    # Centers grid with margin in GUI
+    margin = 50
+    cell_size_x = (screen_x - 2 * margin) / num_colums
+    cell_size_y = (screen_y - 2 * margin) / num_rows
+    maze = Maze(margin, margin, num_rows, num_colums, cell_size_x, cell_size_y, win)
 
     win.wait_for_close()
 
