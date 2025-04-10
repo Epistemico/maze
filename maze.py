@@ -34,6 +34,12 @@ class Maze():
             for j in range(self._num_rows):
                 self._draw_cell(i, j)
 
+    def _break_entrance_and_exit(self):
+        self._cells[0][0].left_wall = False
+        self._draw_cell(0, 0)
+        self._cells[-1][-1].right_wall = False
+        self._draw_cell(self._num_cols - 1, self._num_rows - 1)
+
     def _draw_cell(self, i, j):
         if self._window is None:
             return

@@ -50,6 +50,21 @@ class Tests(unittest.TestCase):
             20
         )
 
+    def test_maze_open_entrance_exit(self):
+        # By default left wall of first cell and right wall of last cell are open.
+        num_cols = 10
+        num_rows = 10
+        m1 = Maze(0, 0, num_rows, num_cols, 10, 10)
+        m1._break_entrance_and_exit()
+        self.assertEqual(
+            (m1._cells[0][0].left_wall),
+            False
+        )
+        self.assertEqual(
+            (m1._cells[-1][-1].right_wall),
+            False
+        )
+
 
 if __name__ == "__main__":
     unittest.main()
