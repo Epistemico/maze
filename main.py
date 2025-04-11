@@ -15,8 +15,7 @@ def main():
     margin = 50
     cell_size_x = (screen_x - 2 * margin) / num_colums
     cell_size_y = (screen_y - 2 * margin) / num_rows
-    maze = Maze(margin, margin, num_rows, num_colums, cell_size_x, cell_size_y, win)
-    maze._break_entrance_and_exit()
+    maze = Maze(margin, margin, num_rows, num_colums, cell_size_x, cell_size_y, win, 8)
 
     win.wait_for_close()
 
