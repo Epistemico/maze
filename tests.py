@@ -55,15 +55,25 @@ class Tests(unittest.TestCase):
         num_cols = 10
         num_rows = 10
         m1 = Maze(0, 0, num_rows, num_cols, 10, 10)
-        m1._break_entrance_and_exit()
         self.assertEqual(
-            (m1._cells[0][0].left_wall),
+            m1._cells[0][0].left_wall,
             False
         )
         self.assertEqual(
-            (m1._cells[-1][-1].right_wall),
+            m1._cells[num_cols - 1][num_rows - 1].right_wall,
             False
         )
+
+    def test_visited_reset(self):
+        num_cols = 8
+        num_rows = 12
+        m1 = Maze(0, 0, num_rows, num_cols, 8, 8)
+        for column in m1._cells:
+            for cell in column:
+                self.assertEqual(
+                    cell.visited,
+                    False
+                )
 
 
 if __name__ == "__main__":

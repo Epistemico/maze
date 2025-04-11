@@ -21,7 +21,7 @@ class Window():
         self.__executing = True
         while self.__executing:
             self.redraw()
-        print("GUI closed")
+        print("Window closed")
     
     def close(self):
         self.__executing = False
