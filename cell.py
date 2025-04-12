@@ -56,7 +56,7 @@ class Cell():
         x2_center = (to_cell._x1_coord + to_cell._x2_coord) / 2
         y2_center = (to_cell._y1_coord + to_cell._y2_coord) / 2
         
-        fill_color = "red" if undo else "gray"
+        fill_color = "gray" if undo else "red"
         line = Line(Point(x1_center, y1_center), Point(x2_center, y2_center))
         
         self._window.draw_line(line, fill_color)
